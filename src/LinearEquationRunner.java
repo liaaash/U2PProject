@@ -1,3 +1,4 @@
+
 import java.util.Scanner;
 public class LinearEquationRunner {
     public static void main(String[] args) {
@@ -14,14 +15,14 @@ public class LinearEquationRunner {
        int coordY1Int = Integer.parseInt(coordY1);
        int coordX2Int = Integer.parseInt(coordX2);
        int coordY2Int = Integer.parseInt(coordY2);
-       if (coordX1 == coordX2) {
-          System.out.println("These points are on a vertical line: x = " + coordX1);
-          System.exit(0);
-       }
        LinearEquation lin = new LinearEquation(coordX1Int, coordY1Int, coordX2Int, coordY2Int);
        System.out.println(lin.lineInfo());
+       if (coordX1Int == coordX2Int) {
+          System.out.println("");
+       } else {
        System.out.println("Enter an x-value: ");
        double xVal = scan.nextDouble();
        System.out.println("The point on the line is: " + lin.coordinateForX(xVal));
+      }
     }
 }

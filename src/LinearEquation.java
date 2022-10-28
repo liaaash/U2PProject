@@ -1,6 +1,6 @@
-
+import java.text.DecimalFormat;
 public class LinearEquation {
-
+    DecimalFormat format = new DecimalFormat("#.##");
     /* Instance Variables */
     private int x1;
     private int y1;
@@ -30,25 +30,34 @@ public class LinearEquation {
     }
 
     public double yIntercept() {
-        return Math.floor((double) y1 - (slope() * x1));
+        return (y1 - (slope() * x1));
     }
 
     public String equation(){
         String str;
+        if (x1 == x2) {
+            return "These points are on a vertical line: x = " + x1;
+        }
         if (y1 == y2){
             return "y = " + y1;
         }
-        if (((y2-y1)%(x2-x1)) == 0) {
+        if (slope() == 1){
+            str = "y = x";
+        } else if (slope() == -1) {
+            str = "y = -x";
+        } else if (((y2-y1)%(x2-x1)) == 0) {
             str = "y = " + (int) slope() + "x";
-        } else if ((x2-x1) < 0){
+        } else if ((x2-x1) < 0 && (y2-y1) < 0) {
+            str = "y = " + Math.abs(y2-y1) + "/" + Math.abs(x2-x1) + "x";
+        } else if ((x2-x1) < 0 && (y2-y1) > 0) {
             str = "y = " + "-" + (y2-y1) + "/" + Math.abs(x2-x1) + "x";
         } else {
             str = "y = " + (y2-y1) + "/" + (x2-x1) + "x";
         }
         if (yIntercept() < 0){
-            str += " - " + Math.abs(yIntercept());
+            str += " - " + format.format(Math.abs(yIntercept()));
         } else if (yIntercept() > 0) {
-            str += " + " + yIntercept();
+            str += " + " + format.format((yIntercept()));
         } else {
             str += "";
         }
@@ -56,22 +65,26 @@ public class LinearEquation {
     }
 
     public String coordinateForX(double xValue) {
-        return "(" + xValue + ", " + (xValue * slope() + yIntercept()) + ")";
+        return "(" + xValue + ", " + (xValue * slope()) + format.format(yIntercept()) + ")";
     }
 
     public double roundedToHundredth(double toRound) {
         return  0.01 * Math.floor((toRound) * 100.0);
     }
-
+    //love
     public String lineInfo() {
         if (x1 == x2){
-            return "";
+            return equation();
         }
         String str = "The two points are " + "(" + x1 + ", " + y1 + ") and (" + x2 + ", " + y2 + ")";
         str += "\nThe equation of the line between these two points are: " + equation();
-        str += "\nThe slope of this line is: " + slope();
-        str += "\nThe y-intercept of this line is: " + yIntercept();
-        str += "\nThe distance between the two points is: " + distance() + "\n";
+        if (slope() == 0) {
+            str += "\nThe slope of this line is: 0";
+        } else {
+            str += "\nThe slope of this line is: " + format.format(slope());
+        }
+        str += "\nThe y-intercept of this line is: " + format.format(yIntercept());
+        str += "\nThe distance between the two points is: " + format.format(distance()) + "\n";
         return str;
     }
 
