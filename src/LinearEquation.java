@@ -71,7 +71,7 @@ public class LinearEquation {
     public double roundedToHundredth(double toRound) {
         return  0.01 * Math.floor((toRound) * 100.0);
     }
-    //love
+    //love it
     public String lineInfo() {
         if (x1 == x2){
             return equation();
