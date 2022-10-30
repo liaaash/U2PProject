@@ -20,17 +20,18 @@ public class LinearEquation {
     public double distance() {
         double num1 = Math.pow((x2 - x1), 2);
         double num2 = Math.pow((y2 - y1), 2);
-        return (Math.sqrt(num2+num1));
+        return roundedToHundredth(Math.sqrt(num2+num1));
     }
 
     /* Calculates and returns the slope of the line between (x1, y1) and
        (x2, y2), rounded to the nearest hundredth */
     public double slope() {
-        return (double) (y2-y1)/(x2-x1);
+        return roundedToHundredth((double) (y2-y1)/(x2-x1));
     }
-
+    /* calculates and returns the y-intercept of the line between (x1, y1) and (x2, y2),
+    rounded to the nearest hundredth */
     public double yIntercept() {
-        return (y1 - (slope() * x1));
+        return roundedToHundredth(y1 - (slope() * x1));
     }
 
     public String equation(){
@@ -55,9 +56,9 @@ public class LinearEquation {
             str = "y = " + (y2-y1) + "/" + (x2-x1) + "x";
         }
         if (yIntercept() < 0){
-            str += " - " + format.format(Math.abs(yIntercept()));
+            str += " - " + roundedToHundredth(Math.abs(yIntercept()));
         } else if (yIntercept() > 0) {
-            str += " + " + format.format((yIntercept()));
+            str += " + " + roundedToHundredth((yIntercept()));
         } else {
             str += "";
         }
@@ -65,13 +66,13 @@ public class LinearEquation {
     }
 
     public String coordinateForX(double xValue) {
-        return "(" + xValue + ", " + (xValue * slope()) + format.format(yIntercept()) + ")";
+        return "(" + xValue + ", " + (xValue * slope()) + (yIntercept()) + ")";
     }
 
-    public double roundedToHundredth(double toRound) {
-        return  0.01 * Math.floor((toRound) * 100.0);
-    }
     //love it
+    public double roundedToHundredth(double toRound) {
+        return Double.parseDouble(format.format(toRound));
+    }
     public String lineInfo() {
         if (x1 == x2){
             return equation();
@@ -81,10 +82,10 @@ public class LinearEquation {
         if (slope() == 0) {
             str += "\nThe slope of this line is: 0";
         } else {
-            str += "\nThe slope of this line is: " + format.format(slope());
+            str += "\nThe slope of this line is: " + (slope());
         }
-        str += "\nThe y-intercept of this line is: " + format.format(yIntercept());
-        str += "\nThe distance between the two points is: " + format.format(distance()) + "\n";
+        str += "\nThe y-intercept of this line is: " + (yIntercept());
+        str += "\nThe distance between the two points is: " + (distance()) + "\n";
         return str;
     }
 
