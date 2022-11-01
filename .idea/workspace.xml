@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="58be05f7-a5c0-4b08-a147-93aaa4b523fb" name="Changes" comment="initiAL">
+    <list default="true" id="58be05f7-a5c0-4b08-a147-93aaa4b523fb" name="Changes" comment="yep">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/LinearEquation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LinearEquation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/LinearEquationRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LinearEquationRunner.java" afterDir="false" />
@@ -41,9 +41,16 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;
   }
 }</component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.LinearEquationRunner">
     <configuration name="LinearEquationRunner" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="LinearEquationRunner" />
+      <module name="U2PProject" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Runner" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Runner" />
       <module name="U2PProject" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -52,6 +59,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.LinearEquationRunner" />
+        <item itemvalue="Application.Runner" />
       </list>
     </recent_temporary>
   </component>
@@ -85,7 +93,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666918651553</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="yep">
+      <created>1667172163984</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1667172163984</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -101,6 +116,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initiAL" />
-    <option name="LAST_COMMIT_MESSAGE" value="initiAL" />
+    <MESSAGE value="yep" />
+    <option name="LAST_COMMIT_MESSAGE" value="yep" />
   </component>
 </project>
